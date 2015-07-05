@@ -1,4 +1,3 @@
-Scripts de todo tipo
 
 [*] searchNIC.py
 
