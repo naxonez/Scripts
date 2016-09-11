@@ -1,3 +1,5 @@
+#!/bin/python
+
 def rc4_pass_bytes(param1, param2):
     temp_ba1 = bytearray()
     temp_ba2 = bytearray()
