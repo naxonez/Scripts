@@ -3,6 +3,7 @@
 			#####################################################
 			# Copiar, cambiar, hacer lo que queráis.. ITS FREE! #
 			#####################################################
+#Exe: python searchNIC.py "http://www.dominios.es/dominios/sites/default/files/files/Altas%20Junio%202015%20(espa%C3%B1ol).pdf"
 
 import sys
 import urllib2
