@@ -66,7 +66,7 @@ def rc4_pass_text(param1,param2):
 
 
 def main():
-    #RC4 binary password
+    #RC4 bytes password
     param2 = bytearray(open("binaryData//1_t.tyeheyazbxhhv.bin","rb").read())
     param1 = bytearray(open("binaryData//2_t.wigyuqyavs.bin", "rb").read())
     data = rc4_pass_bytes(param1, param2)
