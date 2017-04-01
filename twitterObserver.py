@@ -35,7 +35,7 @@ def saveToDB(userName,tweet):
 	conn.close()
 
 def main():
-	malwareToSearch = ['#Dridex','#Trickbot','#Tinba','#Zloader','#Urlzone']
+	malwareToSearch = ['#Dridex','#Trickbot','#Tinba','#Zloader','#Urlzone', '#ursnif','#shiotob']
 	botnetToSearch = ['#Necurs,#Cutwail']
 	TWITTER_APP_KEY = 'XXXX' #supply the appropriate value
 	TWITTER_APP_KEY_SECRET = 'XXXX' 
