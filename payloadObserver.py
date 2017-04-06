@@ -4,9 +4,9 @@ import sqlite3
 import requests
 import datetime
 
-sqlite_file = "database.db" # create table payloadBankers(md5,family,date, PRIMARY KEY(md5));
-bot_id = "363662060:AAF7ljpVap5Kq4ayxYFq4x-7OB2fcnrjUUs"
-chat_id = -180129762
+sqlite_file = "XXXX.db" # create table payloadBankers(md5,family,date, PRIMARY KEY(md5));
+bot_id = "XXXXX"
+chat_id = XXXX
 
 def saveToDB(md5,family):
 	conn = sqlite3.connect(sqlite_file)
