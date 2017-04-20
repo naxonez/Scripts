@@ -25,7 +25,7 @@ def saveToDB(userName,tweet):
                 c.execute("INSERT INTO bankerTweets(TweetId, UserName, Text ,Date) VALUES(?,?,?,?)", (tweet['id_str'], userName[0]['screen_name'], tweet['text'], str(datetime.date.today()) ) )
                 response = requests.post(
                         url='https://api.telegram.org/bot{0}/{1}'.format(bot_id, "sendMessage"),
-                        data={'chat_id': -180129762, 'text': userName[0]['screen_name']+": "+tweet['text']}
+                        data={'chat_id': chat_id, 'text': userName[0]['screen_name']+": "+tweet['text']}
                 ).json()
                 print 'Found!, sending over to telegram..'
         except sqlite3.IntegrityError as e:
