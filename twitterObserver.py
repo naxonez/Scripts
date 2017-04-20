@@ -16,23 +16,25 @@ def searchMalware(t,malware):
 	return tweets
 
 def saveToDB(userName,tweet):
-	conn = sqlite3.connect(sqlite_file)
-	c = conn.cursor()
-	try:
-		c.execute("INSERT INTO bankerTweets(TweetId, UserName, Text ,Date) VALUES('"+tweet['id_str']+"','"+userName[0]['screen_name']+"','"+tweet['text']+"','"+str(datetime.date.today())+"')")
+        conn = sqlite3.connect(sqlite_file)
+        c = conn.cursor()
 
-		response = requests.post(
-   				 	url='https://api.telegram.org/bot{0}/{1}'.format(bot_id, "sendMessage"),
-    					data={'chat_id': chat_id, 'text': userName[0]['screen_name']+": "+tweet['text']}
-		).json()
+        try:
 
-		print response
+                print "%s :: %s :: %s :: %s" % (str(datetime.date.today()), tweet['id_str'] , userName[0]['screen_name'] , tweet['text'])
+                c.execute("INSERT INTO bankerTweets(TweetId, UserName, Text ,Date) VALUES(?,?,?,?)", (tweet['id_str'], userName[0]['screen_name'], tweet['text'], str(datetime.date.today()) ) )
+                response = requests.post(
+                        url='https://api.telegram.org/bot{0}/{1}'.format(bot_id, "sendMessage"),
+                        data={'chat_id': -180129762, 'text': userName[0]['screen_name']+": "+tweet['text']}
+                ).json()
+                print 'Found!, sending over to telegram..'
+        except sqlite3.IntegrityError as e:
+                print "INTEGRITY ERROR: %s" % e
+        except sqlite3.OperationalError as e:
+                print "OPERATIONAL ERROR: %s" % e
 
-	except:
-		pass
-
-	conn.commit()
-	conn.close()
+        conn.commit()
+        conn.close()
 
 def main():
 	malwareToSearch = ['#Dridex','#Trickbot','#Tinba','#Zloader','#Urlzone', '#ursnif','#shiotob']
