@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+
 #script para obtener el C&C de una muestra unpacked de lokibot (desktop)
 
 import sys
