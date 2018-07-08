@@ -1,3 +1,5 @@
+#!/usr/bin/env python2
+
 import requests, string, sys
 from time import gmtime, strftime
 import urllib2,cStringIO, zipfile
