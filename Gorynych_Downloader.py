@@ -9,7 +9,7 @@ def searchString(line):
 	for i in targets:
 		if i in line:
 			userLeak.append(line)
-	print userLeak
+			print userLeak
 	return ''.join(userLeak)
 
 def read_Remote(url):
