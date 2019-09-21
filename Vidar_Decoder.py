@@ -38,7 +38,7 @@ def main():
 				output = xorDecrypt(i,xorKey.decode("hex")).decode("hex")
 				if(all(c in string.printable for c in output) and all(c in string.printable for c in i)):
 					if(len(i) > 2 and len(output) > 2):
-						if(len(output.decode('utf-8')) and len(i) > 3):
+						if(len(output.decode('utf-8'))):
 							print("=====================")
 							print("Encrypted : "+i)
 							print("Key : " + xorKey)
