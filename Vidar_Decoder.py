@@ -4,6 +4,7 @@ import pefile
 import struct
 import string
 
+#https://es.coredump.biz/questions/53504731/xoring-a-string-of-bytes-from-user-input-and-reversing-output
 def xorDecrypt(str,key):
 
     kp = 0
