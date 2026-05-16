@@ -1,4 +1,4 @@
-#DirtyFlag - Solved problems with "os.slice"
+#CopyFlag - Solved problems with "os.slice" (runs on Ubuntu/Debian)
 
 #!/usr/bin/env python3
 import os as g, zlib, socket as s, ctypes, ctypes.util
